@@ -62,7 +62,7 @@ class PrivateIngredientsApiTest(TestCase):
 
     def test_create_ingredient_successfull(self):
         """Create infredient wir good parameter is working"""
-        payload = {'name' : 'Cabage'}
+        payload = {'name': 'Cabage'}
         res = self.client.post(INGREDIENTS_URL, payload)
 
         exists = Ingredient.objects.filter(
@@ -75,7 +75,7 @@ class PrivateIngredientsApiTest(TestCase):
 
     def test_create_ingredient_invalide(self):
         """Test creation of invalid ingredient failed"""
-        payload = { 'name': ""}
+        payload = {'name': ""}
         res = self.client.post(INGREDIENTS_URL, payload)
 
         self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
