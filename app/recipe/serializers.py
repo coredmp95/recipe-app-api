@@ -42,4 +42,3 @@ class RecipeDetailSerializer(RecipeSerializer):
     """Serilize a recipe detail"""
     ingredients = IngredientSerializer(many=True, read_only=True)
     tags = TagSerializer(many=True, read_only=True)
-
